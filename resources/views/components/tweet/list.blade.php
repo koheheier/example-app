@@ -11,6 +11,7 @@
                     </span>
                     <p class="text-gray-600">
                         {!! nl2br(e($tweet->content)) !!}
+                        <x-tweet.images :images="$tweet->images"/>
                     </p>
                 </div>
                 <div>

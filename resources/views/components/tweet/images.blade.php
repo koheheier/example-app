@@ -9,7 +9,7 @@
         <div class="bg-gray-400">
             <a @click="$dispatch('img-modal', {imgModalSrc:'{{ asset('storage/images/' . $image->name) }}'})"
                class="cursor-pointer">
-                <img alt="{{ $image->name }}" class="object-fit w-full" src="{{ asset('storage/image/' . $image->name) }}">
+                <img alt="{{ $image->name }}" class="object-fit w-full" src="{{ asset('storage/images/' . $image->name) }}">
             </a>
         </div>
         @endforeach

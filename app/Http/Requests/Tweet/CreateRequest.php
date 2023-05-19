@@ -24,8 +24,16 @@ class CreateRequest extends FormRequest
     {
         // keyが、リクエストbodyのkeyに対応。valueはLaravelのバリデーションルールで記述
         return [
-            'tweet' => 'required|max:140'
+            'tweet' => 'required|max:140',
+            'images' => 'array|max:4',
+            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ];
+    }
+
+    // 画像ファイル取得
+    public function images(): array
+    {
+        return $this->file('images', []);
     }
     
     // Requestクラスのuser関数で今自分がログインしているユーザーが取得できる
